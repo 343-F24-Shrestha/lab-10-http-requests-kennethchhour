@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show me the Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        button {
+            margin: 10px 0;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .output {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Show me the Data</h1>
+        <div>
+            <h3>Animal Facts</h3>
+            <button onclick="fetchData(1)">Display Data</button>
+            <div id="output1" class="output">No data fetched yet.</div>
+        </div>
+        <div>
+            <h3>Space Facts</h3>
+            <button onclick="fetchData(2)">Display Data</button>
+            <div id="output2" class="output">No data fetched yet.</div>
+        </div>
+        <div>
+            <h3>Historical Facts</h3>
+            <button onclick="fetchData(3)">Display Data</button>
+            <div id="output3" class="output">No data fetched yet.</div>
+        </div>
+    </div>
+
+    <script>
+        async function fetchData(site) {
+            let data;
+            switch(site) {
+                case 1:
+                    data = "A cat can sprint at about thirty-one miles per hour.";
+                    break;
+                case 2:
+                    data = "The Milky Way galaxy is approximately 100,000 light-years in diameter.";
+                    break;
+                case 3:
+                    data = "The Great Wall of China is more than 13,000 miles long.";
+                    break;
+                default:
+                    data = "No data available.";
+            }
+            document.getElementById(`output${site}`).innerText = data;
+        }
+    </script>
+</body>
+</html>
